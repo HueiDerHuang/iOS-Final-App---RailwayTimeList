@@ -7,14 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F60A169121E9E46D00E16112 /* StationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A169021E9E46D00E16112 /* StationTableViewController.swift */; };
+		F60A169321E9E61900E16112 /* CityAndStationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */; };
+		F629C2E921E75634000D2A20 /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629C2E821E75634000D2A20 /* TimeInfo.swift */; };
+		F629C2EB21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */; };
+		F6A6A7DC21EB59F000CD9DE8 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */; };
+		F6A6A7DE21EB98C200CD9DE8 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */; };
+		F6A6A7E021EB9B7C00CD9DE8 /* FavoriteLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */; };
+		F6C3941E21E7F6C300DBD9AD /* TrainsInTimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3941D21E7F6C300DBD9AD /* TrainsInTimeList.swift */; };
+		F6C3942021E9370700DBD9AD /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3941F21E9370700DBD9AD /* HomeTableViewController.swift */; };
 		F6EF022E21E4F63500AD0EA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF022D21E4F63500AD0EA8 /* AppDelegate.swift */; };
 		F6EF023021E4F63500AD0EA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF022F21E4F63500AD0EA8 /* ViewController.swift */; };
 		F6EF023321E4F63500AD0EA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EF023121E4F63500AD0EA8 /* Main.storyboard */; };
 		F6EF023521E4F63800AD0EA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6EF023421E4F63800AD0EA8 /* Assets.xcassets */; };
 		F6EF023821E4F63800AD0EA8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EF023621E4F63800AD0EA8 /* LaunchScreen.storyboard */; };
+		F6EF024021E4FCCC00AD0EA8 /* TrainResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF023F21E4FCCC00AD0EA8 /* TrainResult.swift */; };
+		F6EF024221E4FCF300AD0EA8 /* StationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF024121E4FCF300AD0EA8 /* StationResult.swift */; };
+		F6EF024621E5061800AD0EA8 /* TimeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF024521E5061800AD0EA8 /* TimeListTableViewController.swift */; };
+		F6EF024C21E53E4B00AD0EA8 /* StationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF024B21E53E4B00AD0EA8 /* StationInfo.swift */; };
+		F6EF024E21E53F9E00AD0EA8 /* TrainInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF024D21E53F9E00AD0EA8 /* TrainInfo.swift */; };
+		F6F0FD4321E95ACC007CBF70 /* CityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F0FD4221E95ACC007CBF70 /* CityTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F60A169021E9E46D00E16112 /* StationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationTableViewController.swift; sourceTree = "<group>"; };
+		F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAndStationTableViewCell.swift; sourceTree = "<group>"; };
+		F629C2E821E75634000D2A20 /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
+		F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAndTimeInfosTableViewCell.swift; sourceTree = "<group>"; };
+		F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLists.swift; sourceTree = "<group>"; };
+		F6C3941D21E7F6C300DBD9AD /* TrainsInTimeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsInTimeList.swift; sourceTree = "<group>"; };
+		F6C3941F21E9370700DBD9AD /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
 		F6EF022A21E4F63500AD0EA8 /* 鐵路時刻表.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "鐵路時刻表.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6EF022D21E4F63500AD0EA8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6EF022F21E4F63500AD0EA8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +46,12 @@
 		F6EF023421E4F63800AD0EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6EF023721E4F63800AD0EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6EF023921E4F63800AD0EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EF023F21E4FCCC00AD0EA8 /* TrainResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainResult.swift; sourceTree = "<group>"; };
+		F6EF024121E4FCF300AD0EA8 /* StationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationResult.swift; sourceTree = "<group>"; };
+		F6EF024521E5061800AD0EA8 /* TimeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeListTableViewController.swift; sourceTree = "<group>"; };
+		F6EF024B21E53E4B00AD0EA8 /* StationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInfo.swift; sourceTree = "<group>"; };
+		F6EF024D21E53F9E00AD0EA8 /* TrainInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainInfo.swift; sourceTree = "<group>"; };
+		F6F0FD4221E95ACC007CBF70 /* CityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +90,21 @@
 				F6EF023421E4F63800AD0EA8 /* Assets.xcassets */,
 				F6EF023621E4F63800AD0EA8 /* LaunchScreen.storyboard */,
 				F6EF023921E4F63800AD0EA8 /* Info.plist */,
+				F6EF023F21E4FCCC00AD0EA8 /* TrainResult.swift */,
+				F6EF024D21E53F9E00AD0EA8 /* TrainInfo.swift */,
+				F629C2E821E75634000D2A20 /* TimeInfo.swift */,
+				F6EF024121E4FCF300AD0EA8 /* StationResult.swift */,
+				F6EF024B21E53E4B00AD0EA8 /* StationInfo.swift */,
+				F6C3941D21E7F6C300DBD9AD /* TrainsInTimeList.swift */,
+				F6C3941F21E9370700DBD9AD /* HomeTableViewController.swift */,
+				F6F0FD4221E95ACC007CBF70 /* CityTableViewController.swift */,
+				F60A169021E9E46D00E16112 /* StationTableViewController.swift */,
+				F6EF024521E5061800AD0EA8 /* TimeListTableViewController.swift */,
+				F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */,
+				F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */,
+				F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */,
+				F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */,
+				F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */,
 			);
 			path = "鐵路時刻表";
 			sourceTree = "<group>";
@@ -135,8 +180,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6C3942021E9370700DBD9AD /* HomeTableViewController.swift in Sources */,
+				F6EF024021E4FCCC00AD0EA8 /* TrainResult.swift in Sources */,
 				F6EF023021E4F63500AD0EA8 /* ViewController.swift in Sources */,
+				F629C2EB21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift in Sources */,
+				F6F0FD4321E95ACC007CBF70 /* CityTableViewController.swift in Sources */,
+				F6A6A7DC21EB59F000CD9DE8 /* FavoriteTableViewController.swift in Sources */,
+				F6C3941E21E7F6C300DBD9AD /* TrainsInTimeList.swift in Sources */,
+				F6EF024E21E53F9E00AD0EA8 /* TrainInfo.swift in Sources */,
+				F6EF024221E4FCF300AD0EA8 /* StationResult.swift in Sources */,
+				F6A6A7DE21EB98C200CD9DE8 /* FavoriteTableViewCell.swift in Sources */,
+				F6EF024621E5061800AD0EA8 /* TimeListTableViewController.swift in Sources */,
+				F60A169121E9E46D00E16112 /* StationTableViewController.swift in Sources */,
+				F6A6A7E021EB9B7C00CD9DE8 /* FavoriteLists.swift in Sources */,
+				F6EF024C21E53E4B00AD0EA8 /* StationInfo.swift in Sources */,
+				F629C2E921E75634000D2A20 /* TimeInfo.swift in Sources */,
 				F6EF022E21E4F63500AD0EA8 /* AppDelegate.swift in Sources */,
+				F60A169321E9E61900E16112 /* CityAndStationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +350,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "HueiDerHuang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -307,6 +368,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "HueiDerHuang.-----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENFORCE_EXCLUSIVE_ACCESS = none;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

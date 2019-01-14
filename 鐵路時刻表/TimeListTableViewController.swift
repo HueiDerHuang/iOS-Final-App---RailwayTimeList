@@ -21,8 +21,36 @@ class TimeListTableViewController: UITableViewController {
     let crippleImage = UIImage(named: "cripple.png")
     let overNightStnImage = UIImage(named: "overNightStn.png")
     let dailyImage = UIImage(named: "daily.png")
-    var favoriteLists = [FavoriteList]()
+    var recordLists = [RecordList]()
+    var favoriteLineLists = [FavoriteLineList]()
+    var selectedDateStringOriginal: String?
     
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+        var repeatLineIsTrue = false
+        let alertController = UIAlertController(title: "是否要加入最愛路線？", message: nil, preferredStyle: .alert)
+        let action = UIAlertAction(title: "是", style: .default) { (UIAlertAction) in
+            if let originStationString = self.originStationString, let destinationStationString = self.destinationStationString {
+                for line in self.favoriteLineLists {
+                    if line.OriginStation == originStationString && line.DestinationStation == destinationStationString {
+                        repeatLineIsTrue = true
+                    }
+                }
+                if !repeatLineIsTrue {
+                    self.favoriteLineLists.append(FavoriteLineList(
+                        OriginStation: originStationString,
+                        DestinationStation: destinationStationString
+                    ))
+                    FavoriteLineList.saveToFile(favoriteLineLists: self.favoriteLineLists)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        let action2 = UIAlertAction(title: "否", style: .default, handler: nil)
+        alertController.addAction(action2)
+        alertController.addAction(action)
+        present(alertController, animated: true)
+    }
     
     
     
@@ -52,7 +80,8 @@ class TimeListTableViewController: UITableViewController {
         }
         // TrainInfos
         var combineUrlAndDateString = ""
-        if let dateString = selectedDateString {
+        selectedDateStringOriginal = selectedDateString
+        if let dateString = date(selectedDateString) {
             combineUrlAndDateString = "https://raw.githubusercontent.com/HueiDerHuang/TrainInfosJson/master/" + dateString
         } else {
             print("error: combineUrlAndDateString\n")
@@ -171,6 +200,19 @@ class TimeListTableViewController: UITableViewController {
     
     
     
+    func date(_ date: String?) -> String? {
+        var string = ""
+        if let date = date {
+            let array = date.split(separator: ".")
+            for i in 0..<array.count {
+                string = String(array[i])
+            }
+        }
+        return string
+    }
+    
+    
+    
     func optionalToString(_ string: String?) -> String {
         if let string = string {
             return string
@@ -285,6 +327,11 @@ class TimeListTableViewController: UITableViewController {
         self.refreshControl?.tintColor = UIColor.gray
         
         getJsonDataFromUrl()
+        
+        if let favoriteLineLists = FavoriteLineList.readFromFile(), let recordLists = RecordList.readFromFile() {
+            self.favoriteLineLists = favoriteLineLists
+            self.recordLists = recordLists
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -345,32 +392,46 @@ class TimeListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let alertController = UIAlertController(title: "是否要加入常搭乘班次？", message: nil, preferredStyle: .alert)
-        let action = UIAlertAction(title: "是", style: .default, handler: { (UIAlertAction) in
-            let carClassAndTrain = "\(String(describing: self.trainInfosInTimeLists[indexPath.row].CarClass))\n\(String(describing: self.trainInfosInTimeLists[indexPath.row].Train))"
-            print("carClassAndTrain: \(carClassAndTrain)")
-            self.favoriteLists.append(FavoriteList(
-                Train: self.trainInfosInTimeLists[indexPath.row].Train,
-                CarClass: self.trainInfosInTimeLists[indexPath.row].CarClass,
-                CarClassAndTrain: carClassAndTrain,
-                BreastFeed: self.trainInfosInTimeLists[indexPath.row].BreastFeed,
-                Cripple: self.trainInfosInTimeLists[indexPath.row].Cripple,
-                Dinning: self.trainInfosInTimeLists[indexPath.row].Dinning,
-                Note: self.trainInfosInTimeLists[indexPath.row].Note,
-                OverNightStn: self.trainInfosInTimeLists[indexPath.row].OverNightStn,
-                DepTime: self.trainInfosInTimeLists[indexPath.row].DepTime,
-                ArrTime: self.trainInfosInTimeLists[indexPath.row].ArrTime,
-                CostTime: self.trainInfosInTimeLists[indexPath.row].CostTime,
-                Cost: self.trainInfosInTimeLists[indexPath.row].Cost,
-                OriginStation: self.originStationString!,
-                DestinationStation: self.destinationStationString!
-            ))
-            FavoriteList.saveToFile(favoriteLists: self.favoriteLists)
-            tableView.reloadData()
+        var repeatListIsTrue = false
+        for record in self.recordLists {
+            if record.Train == trainInfosInTimeLists[indexPath.row].Train {
+                repeatListIsTrue = true
+            }
+        }
+        if !repeatListIsTrue {
+            let alertController = UIAlertController(title: "是否紀錄搭乘車次？", message: nil, preferredStyle: .alert)
+            let action = UIAlertAction(title: "是", style: .default, handler: { (UIAlertAction) in
+                let carClassAndTrain = "\(String(describing: self.trainInfosInTimeLists[indexPath.row].CarClass))\n\(String(describing: self.trainInfosInTimeLists[indexPath.row].Train))"
+                print("carClassAndTrain: \(carClassAndTrain)")
+                self.recordLists.append(RecordList(
+                    Train: self.trainInfosInTimeLists[indexPath.row].Train,
+                    CarClass: self.trainInfosInTimeLists[indexPath.row].CarClass,
+                    CarClassAndTrain: carClassAndTrain,
+                    BreastFeed: self.trainInfosInTimeLists[indexPath.row].BreastFeed,
+                    Cripple: self.trainInfosInTimeLists[indexPath.row].Cripple,
+                    Dinning: self.trainInfosInTimeLists[indexPath.row].Dinning,
+                    Note: self.trainInfosInTimeLists[indexPath.row].Note,
+                    OverNightStn: self.trainInfosInTimeLists[indexPath.row].OverNightStn,
+                    DepTime: self.trainInfosInTimeLists[indexPath.row].DepTime,
+                    ArrTime: self.trainInfosInTimeLists[indexPath.row].ArrTime,
+                    CostTime: self.trainInfosInTimeLists[indexPath.row].CostTime,
+                    Cost: self.trainInfosInTimeLists[indexPath.row].Cost,
+                    OriginStation: self.originStationString!,
+                    DestinationStation: self.destinationStationString!,
+                    Date: self.selectedDateStringOriginal!
+                ))
+                RecordList.saveToFile(recordLists: self.recordLists)
+                tableView.reloadData()
             })
-        alertController.addAction(action)
-        alertController.addAction(UIAlertAction(title: "否", style: .cancel, handler: nil))
-        present(alertController, animated: true, completion: nil)
+            alertController.addAction(action)
+            alertController.addAction(UIAlertAction(title: "否", style: .cancel, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "此車次已記錄", message: nil, preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "是", style: .cancel, handler: nil))
+            present(alertController, animated: true, completion: nil)
+        }
+        
     }
 
     /*
@@ -408,14 +469,18 @@ class TimeListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        let controller = segue.destination as? HomeTableViewController
+        controller?.favoriteLineLists = favoriteLineLists
+        
     }
-    */
+    
 
 }

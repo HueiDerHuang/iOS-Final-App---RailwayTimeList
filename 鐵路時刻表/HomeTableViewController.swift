@@ -25,7 +25,10 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     var segueToTimeListTableViewController = "segueToTimeListTableViewController"
     var segueFromFavorite = "segueFromFavorite"
     var segueFromRecord = "segueFromRecord"
-    var favoriteLists = [FavoriteList]()
+    var recordLists = [RecordList]()
+    var favoriteLineLists = [FavoriteLineList]()
+    
+    
     
     @IBOutlet weak var originStationButton: UIButton!
     @IBOutlet weak var destinationStationButton: UIButton!
@@ -40,6 +43,19 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
     @IBAction func goBackToHomeTableViewCell(segue: UIStoryboardSegue) {
         
     }
+    
+    
+    
+    @IBAction func changeStationButtonPressed(_ sender: Any) {
+        var temp: String?
+        temp = originStationButton.titleLabel?.text
+        originStationButton.titleLabel?.text = destinationStationButton.titleLabel?.text
+        destinationStationButton.titleLabel?.text = temp
+        temp = originStationStringOnButton
+        originStationStringOnButton = destinationStationStringOnButton
+        destinationStationStringOnButton = temp
+    }
+    
     
     
     
@@ -129,7 +145,7 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             currentSixtyDaysStrings.append(SixtyDaysString)
         }
         
-        // Set time strings in pickerView
+        // Set timeStrings in pickerView
         let TwentyFourHoursTimeFormatter = DateFormatter()
         TwentyFourHoursTimeFormatter.dateFormat = "HH"
         for hour in 0...23 {
@@ -143,7 +159,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         let timeString = timeFormatter.string(from: date)
         timeLabel.text = timeString
         
-        // Set selectedTimeString
+        // Set selectedDateString and selectedTimeString
+        self.selectedDateString = dateString
         self.selectedTimeString = timeString
     }
     
@@ -157,6 +174,8 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         }
         return string
     }
+    
+    
     
     
 
@@ -177,6 +196,11 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
         
         // Set dateLabel and timeLabel
         initializeDateAndTimeLabel()
+        
+        if let favoriteLineLists = FavoriteLineList.readFromFile() , let recordLists = RecordList.readFromFile() {
+            self.favoriteLineLists = favoriteLineLists
+            self.recordLists = recordLists
+        }
         
     }
 
@@ -263,8 +287,11 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
                 controller?.selectedTimeString = selectedTimeString
             }
         } else if segue.identifier == segueFromFavorite {
-            let controller = segue.destination as? FavoriteTableViewController
-            controller?.favoriteLists = favoriteLists
+            let controller = segue.destination as? FavoriteLineListTableViewController
+            controller?.favoriteLineLists = favoriteLineLists
+        } else if segue.identifier == segueFromRecord {
+            let controller = segue.destination as? RecordTableViewController
+            controller?.recordLists = recordLists
         } else {
             var fromWhichButtonString = ""
             if segue.identifier == originStationSegue {
@@ -275,7 +302,6 @@ class HomeTableViewController: UITableViewController, UIPickerViewDelegate, UIPi
             let controller = segue.destination as? CityTableViewController
             controller?.fromWhichButtonString = fromWhichButtonString
         }
+        print("selectedDateString: \(String(describing: selectedDateString))")
     }
- 
-
 }

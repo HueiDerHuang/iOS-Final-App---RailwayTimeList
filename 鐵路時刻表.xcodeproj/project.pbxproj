@@ -11,8 +11,11 @@
 		F60A169321E9E61900E16112 /* CityAndStationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */; };
 		F629C2E921E75634000D2A20 /* TimeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629C2E821E75634000D2A20 /* TimeInfo.swift */; };
 		F629C2EB21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */; };
-		F6A6A7DC21EB59F000CD9DE8 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */; };
-		F6A6A7DE21EB98C200CD9DE8 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */; };
+		F67B81BB21EBE82900C8CBB0 /* RecordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B81BA21EBE82900C8CBB0 /* RecordList.swift */; };
+		F67B81BD21EBEBFC00C8CBB0 /* RecordTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B81BC21EBEBFC00C8CBB0 /* RecordTableViewController.swift */; };
+		F67B81BF21EBEC7800C8CBB0 /* RecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67B81BE21EBEC7800C8CBB0 /* RecordTableViewCell.swift */; };
+		F6A6A7DC21EB59F000CD9DE8 /* FavoriteLineListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DB21EB59F000CD9DE8 /* FavoriteLineListTableViewController.swift */; };
+		F6A6A7DE21EB98C200CD9DE8 /* FavoriteLineListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DD21EB98C200CD9DE8 /* FavoriteLineListTableViewCell.swift */; };
 		F6A6A7E021EB9B7C00CD9DE8 /* FavoriteLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */; };
 		F6C3941E21E7F6C300DBD9AD /* TrainsInTimeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3941D21E7F6C300DBD9AD /* TrainsInTimeList.swift */; };
 		F6C3942021E9370700DBD9AD /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C3941F21E9370700DBD9AD /* HomeTableViewController.swift */; };
@@ -34,8 +37,11 @@
 		F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAndStationTableViewCell.swift; sourceTree = "<group>"; };
 		F629C2E821E75634000D2A20 /* TimeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInfo.swift; sourceTree = "<group>"; };
 		F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainAndTimeInfosTableViewCell.swift; sourceTree = "<group>"; };
-		F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
-		F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		F67B81BA21EBE82900C8CBB0 /* RecordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordList.swift; sourceTree = "<group>"; };
+		F67B81BC21EBEBFC00C8CBB0 /* RecordTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewController.swift; sourceTree = "<group>"; };
+		F67B81BE21EBEC7800C8CBB0 /* RecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordTableViewCell.swift; sourceTree = "<group>"; };
+		F6A6A7DB21EB59F000CD9DE8 /* FavoriteLineListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLineListTableViewController.swift; sourceTree = "<group>"; };
+		F6A6A7DD21EB98C200CD9DE8 /* FavoriteLineListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLineListTableViewCell.swift; sourceTree = "<group>"; };
 		F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteLists.swift; sourceTree = "<group>"; };
 		F6C3941D21E7F6C300DBD9AD /* TrainsInTimeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainsInTimeList.swift; sourceTree = "<group>"; };
 		F6C3941F21E9370700DBD9AD /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
@@ -102,9 +108,12 @@
 				F6EF024521E5061800AD0EA8 /* TimeListTableViewController.swift */,
 				F629C2EA21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift */,
 				F60A169221E9E61900E16112 /* CityAndStationTableViewCell.swift */,
-				F6A6A7DB21EB59F000CD9DE8 /* FavoriteTableViewController.swift */,
-				F6A6A7DD21EB98C200CD9DE8 /* FavoriteTableViewCell.swift */,
+				F6A6A7DB21EB59F000CD9DE8 /* FavoriteLineListTableViewController.swift */,
+				F6A6A7DD21EB98C200CD9DE8 /* FavoriteLineListTableViewCell.swift */,
 				F6A6A7DF21EB9B7C00CD9DE8 /* FavoriteLists.swift */,
+				F67B81BC21EBEBFC00C8CBB0 /* RecordTableViewController.swift */,
+				F67B81BE21EBEC7800C8CBB0 /* RecordTableViewCell.swift */,
+				F67B81BA21EBE82900C8CBB0 /* RecordList.swift */,
 			);
 			path = "鐵路時刻表";
 			sourceTree = "<group>";
@@ -182,20 +191,23 @@
 			files = (
 				F6C3942021E9370700DBD9AD /* HomeTableViewController.swift in Sources */,
 				F6EF024021E4FCCC00AD0EA8 /* TrainResult.swift in Sources */,
+				F67B81BB21EBE82900C8CBB0 /* RecordList.swift in Sources */,
 				F6EF023021E4F63500AD0EA8 /* ViewController.swift in Sources */,
 				F629C2EB21E7BC5C000D2A20 /* TrainAndTimeInfosTableViewCell.swift in Sources */,
 				F6F0FD4321E95ACC007CBF70 /* CityTableViewController.swift in Sources */,
-				F6A6A7DC21EB59F000CD9DE8 /* FavoriteTableViewController.swift in Sources */,
+				F6A6A7DC21EB59F000CD9DE8 /* FavoriteLineListTableViewController.swift in Sources */,
 				F6C3941E21E7F6C300DBD9AD /* TrainsInTimeList.swift in Sources */,
 				F6EF024E21E53F9E00AD0EA8 /* TrainInfo.swift in Sources */,
 				F6EF024221E4FCF300AD0EA8 /* StationResult.swift in Sources */,
-				F6A6A7DE21EB98C200CD9DE8 /* FavoriteTableViewCell.swift in Sources */,
+				F6A6A7DE21EB98C200CD9DE8 /* FavoriteLineListTableViewCell.swift in Sources */,
+				F67B81BD21EBEBFC00C8CBB0 /* RecordTableViewController.swift in Sources */,
 				F6EF024621E5061800AD0EA8 /* TimeListTableViewController.swift in Sources */,
 				F60A169121E9E46D00E16112 /* StationTableViewController.swift in Sources */,
 				F6A6A7E021EB9B7C00CD9DE8 /* FavoriteLists.swift in Sources */,
 				F6EF024C21E53E4B00AD0EA8 /* StationInfo.swift in Sources */,
 				F629C2E921E75634000D2A20 /* TimeInfo.swift in Sources */,
 				F6EF022E21E4F63500AD0EA8 /* AppDelegate.swift in Sources */,
+				F67B81BF21EBEC7800C8CBB0 /* RecordTableViewCell.swift in Sources */,
 				F60A169321E9E61900E16112 /* CityAndStationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

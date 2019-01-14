@@ -73,7 +73,6 @@ class StationTableViewController: UITableViewController {
         
         if let selectedCity = selectedCity {
             stationsInASelectedPart = initializeStationArray(selectedCity)
-            self.tableView.reloadData()
         }
         
         // Uncomment the following line to preserve selection between presentations

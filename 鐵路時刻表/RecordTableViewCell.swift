@@ -1,5 +1,5 @@
 //
-//  FavoriteTableViewCell.swift
+//  RecordTableViewCell.swift
 //  鐵路時刻表
 //
 //  Created by 黃暉德 on 2019/1/14.
@@ -8,8 +8,8 @@
 
 import UIKit
 
-class FavoriteTableViewCell: UITableViewCell {
-
+class RecordTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var trainInfoLabel: UILabel!
     @IBOutlet weak var originStationLabel: UILabel!
     @IBOutlet weak var destinationStationLabel: UILabel!
@@ -17,8 +17,9 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var arrTimeLabel: UILabel!
     @IBOutlet weak var noteLabel: UILabel!
     @IBOutlet var imageViews: [UIImageView]!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

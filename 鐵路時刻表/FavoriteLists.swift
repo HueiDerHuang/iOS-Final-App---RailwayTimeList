@@ -8,35 +8,23 @@
 
 import Foundation
 
-struct FavoriteList: Codable {
-    var Train: String
-    var CarClass: String
-    var CarClassAndTrain: String
-    var BreastFeed: String
-    var Cripple: String
-    var Dinning: String
-    var Note: String
-    var OverNightStn: String
-    var DepTime: String
-    var ArrTime: String
-    var CostTime: String
-    var Cost: String
+struct FavoriteLineList: Codable {
     var OriginStation: String
     var DestinationStation: String
     
-    static func readFromFile() -> [FavoriteList]? {
+    static func readFromFile() -> [FavoriteLineList]? {
         let propertyDecoder = PropertyListDecoder()
-        if let data = UserDefaults.standard.data(forKey: "favoriteList"), let favoriteList = try? propertyDecoder.decode([FavoriteList].self, from: data) {
-            return favoriteList
+        if let data = UserDefaults.standard.data(forKey: "favoriteLineList"), let favoriteLineList = try? propertyDecoder.decode([FavoriteLineList].self, from: data) {
+            return favoriteLineList
         } else {
             return nil
         }
     }
     
-    static func saveToFile(favoriteLists: [FavoriteList]) {
+    static func saveToFile(favoriteLineLists: [FavoriteLineList]) {
         let propertyEncoder = PropertyListEncoder()
-        if let data = try? propertyEncoder.encode(favoriteLists) {
-            UserDefaults.standard.set(data, forKey: "favoriteList")
+        if let data = try? propertyEncoder.encode(favoriteLineLists) {
+            UserDefaults.standard.set(data, forKey: "favoriteLineList")
         }
     }
 }
